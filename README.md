@@ -107,4 +107,5 @@ This project is designed to be run in a Google Colab notebook environment.
 ---
 
 *Author: Mehmet Ovgu Hun*
+
 *Course: Advanced Natural Language Processing, M.Sc. Data Science, University of Debrecen, 2025*

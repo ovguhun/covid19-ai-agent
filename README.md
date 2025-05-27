@@ -1,4 +1,4 @@
-# AI Research Assistant: CORD-19 & Smoking Linkages (M.Sc. Project)
+# AI Research Agent: COVID-19 & Smoking Linkages
 
 ## 🚀 Introduction
 

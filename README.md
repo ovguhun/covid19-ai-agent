@@ -47,7 +47,7 @@ The development process, as detailed in the accompanying `.ipynb` notebook, foll
     * Creating a `VectorStoreIndex` from these chunks, generating embeddings on the GPU.
     * Persisting (saving) the index to Google Drive and implementing logic to load it.
 4.  **Phase 4: AI Agent Development:**
-    * Configuring the LLM (`unsloth/llama-3-8b-Instruct-bnb-4bit` with `context_window=4096`, `max_new_tokens=512`).
+    * Configuring the LLM (`unsloth/llama-3-8b-Instruct-bnb-4bit` with `context_window=2048`, `max_new_tokens=256`).
     * Creating a robust base RAG query engine with a custom prompt template designed for factual synthesis and graceful handling of off-topic queries.
     * Layering a `CondenseQuestionChatEngine` on top, with a custom condense prompt, to enable better conversational understanding and handling of follow-ups or vague inputs.
 5.  **Phase 5: Application Development (Gradio GUI):**
@@ -86,13 +86,13 @@ This project is designed to be run in a Google Colab notebook environment.
 
 * **Large Language Model:** `unsloth/llama-3-8b-Instruct-bnb-4bit`
     * A 4-bit quantized version of Meta's Llama 3 8B Instruct model, optimized by Unsloth for faster inference and reduced memory footprint.
-    * Key parameters used: `context_window=4096`, `max_new_tokens=512`, `temperature=0.7`.
+    * Key parameters used: `context_window=2048`, `max_new_tokens=256`, `temperature=0.7`.
 * **Embedding Model:** `sentence-transformers/all-MiniLM-L6-v2`
     * Used for generating vector embeddings from the text chunks.
 
 ## 💡 Key Parameters & Configurations
 
-* **Retriever `similarity_top_k`:** 5 (retrieves the top 5 most relevant text chunks for a query).
+* **Retriever `similarity_top_k`:** 7 (retrieves the top 7 most relevant text chunks for a query).
 * **Text Chunk Size:** 150 words.
 * **Prompts:** Custom prompt templates are used for both the `CondenseQuestionChatEngine` (to refine user queries based on chat history) and the base `RetrieverQueryEngine` (to guide the LLM in synthesizing answers based strictly on the provided context and handling off-topic/casual inputs).
 
